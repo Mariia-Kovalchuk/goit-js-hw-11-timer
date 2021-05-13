@@ -2,6 +2,7 @@ class CountdownTimer {
     constructor({ selector, targetDate }) {
         this.selector = selector;
         this.targetDate = targetDate;
+        this.start();
 
     }
 
@@ -54,14 +55,11 @@ class CountdownTimer {
     const secs = String(Math.floor((time % (1000 * 60)) / 1000)).padStart(2, '0');
 
     return {days, hours, mins, secs };
-  }
+    }
+    
 }
 
 const moduleTimer = new CountdownTimer({
   selector: '#timer-1',
   targetDate: new Date('Jun 23, 2021'),
 });
-
-
-
-moduleTimer.start();
